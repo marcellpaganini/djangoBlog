@@ -3,14 +3,20 @@
 {% block content %}
 
 
-
 <h1>Post</h1>
 
 <ul>
 {% for post in object_list %}
-    <li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
+    <div class="card" style="width: 18rem;">
+<!--    <img src="..." class="card-img-top" alt="...">-->
+    <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.body }}</p>
+    <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
         {{ post.author.last_name }}<br/>
-        {{ post.body }}</li>
+    </div>
+    </div>
+    <br/>
 {% endfor %}
 </ul>
 
