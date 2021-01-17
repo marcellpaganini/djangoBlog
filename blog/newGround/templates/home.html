@@ -1,8 +1,8 @@
 	{% extends 'base.html' %}
 
 {% block content %}
-
-<style>
+{% load static %}
+	<style>
 		.carousel-inner img{
 			width: 100%;
 			height: 100%;
@@ -16,7 +16,6 @@
 			backface-visibility: visible;
 		}
 	</style>
-
 
 	<main>
 			<div class="carousel-large-screen">
@@ -32,8 +31,8 @@
 							<div class="carousel-item active">
 								<div class="row">
 									<div class="col-sm-9">
-										<div class="promo">
-											<img src="img/sky_carousel.jpg" alt="family" />
+										<div class="promo"> 
+											<img src="{% static 'images/sky_carousel.jpg' %}" alt="family" />
 											<div class="hilight">
 												<h6>Sky</h6>
 											</div>
@@ -51,7 +50,7 @@
 								<div class="row">
 									<div class="col-sm-9">
 										<div class="promo">
-											<img src="img/winter_carousel.jpg" alt="winter" />
+											<img src="{% static 'images/winter_carousel.jpg' %}" alt="winter" />
 											<div class="hilight">
 												<h6>Winter</h6>
 											</div>
@@ -69,7 +68,7 @@
 								<div class="row">
 									<div class="col-sm-9">
 										<div class="promo">
-											<img src="img/ruth_carousel.jpg" alt="winter" />
+											<img src="{% static 'images/ruth_carousel.jpg' %}" alt="winter" />
 											<div class="hilight">
 												<h6>Ruth</h6>
 											</div>
@@ -104,7 +103,7 @@
 				<div class="carousel-inner">
 						<div class="carousel-item active">
 									<div class="promo">
-										<img src="img/sky_carousel.jpg" alt="family" />
+										<img src="{% static 'images/sky_carousel.jpg' %}" alt="family" />
 										<div class="hilight">
 											<h6>Sky</h6>
 										</div>
@@ -112,7 +111,7 @@
 						</div>
 						<div class="carousel-item">
 									<div class="promo">
-										<img src="img/winter_carousel.jpg" alt="winter" />
+										<img src="{% static 'images/winter_carousel.jpg' %}" alt="winter" />
 										<div class="hilight">
 											<h6>Winter</h6>
 										</div>
@@ -120,7 +119,7 @@
 						</div>
 						<div class="carousel-item">
 									<div class="promo">
-										<img src="img/ruth_carousel.jpg" alt="winter" />
+										<img src="{% static 'images/ruth_carousel.jpg' %}" alt="winter" />
 										<div class="hilight">
 											<h6>Ruth</h6>
 										</div>
@@ -137,35 +136,10 @@
 			</div>
 
 			<p>
-				<h4>&nbsp Mais artigos</h4>
-			</p>
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="card">
-								<div class="card-body"><img src="img/sunset.jpg" alt="sunset" style="width: 100%;
-									height: 100%; border-radius: 2%;"/></div>
-								<div class="card-footer">So perhaps, you've generated some fancy text, and you're content
-									that you can now copy and paste your fancy text in the comments section of funny cat videos</div>
-						  </div></div>
-						<div class="col-sm-4">
-							<div class="card">
-								<div class="card-body"><img src="img/family.JPG" alt="sunset" style="width: 100%;
-									height: 100%; border-radius: 2%;"/></div>
-								<div class="card-footer">So perhaps, you've generated some fancy text, and you're content
-									 that you can now copy and paste your fancy text in the comments section of funny cat videos</div>
-							  </div>
-						</div>
-						<div class="col-sm-4">
-							<div class="card">
-								<div class="card-body"><img src="img/ruth.jpg" alt="sunset" style="width: 100%;
-									height: 100%; border-radius: 2%;"/></div>
-								<div class="card-footer">So perhaps, you've generated some fancy text, and you're content
-									 that you can now copy and paste your fancy text in the comments section of funny cat videos</div>
-							  </div>
-						</div>
-					</div>
-	</main>
+
 <h1>Post</h1>
+
+
 
 <ul>
 {% for post in object_list %}

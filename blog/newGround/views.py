@@ -10,7 +10,7 @@ from .forms import PostForm
 
 class HomeView(ListView):
     model = Post
-    template_name = 'home_old.html'
+    template_name = 'home.html'
 
 class ArticleDetailView(DetailView):
     model = Post
