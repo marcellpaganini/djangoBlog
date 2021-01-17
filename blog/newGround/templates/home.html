@@ -31,7 +31,7 @@
 							<div class="carousel-item active">
 								<div class="row">
 									<div class="col-sm-9">
-										<div class="promo"> 
+										<div class="promo">
 											<img src="{% static 'images/sky_carousel.jpg' %}" alt="family" />
 											<div class="hilight">
 												<h6>Sky</h6>
@@ -134,10 +134,10 @@
 				</a>
 			</div>
 			</div>
-
+	</main>
 			<p>
 
-<h1>Post</h1>
+<h1>Articles</h1>
 
 
 
@@ -147,7 +147,7 @@
 <!--    <img src="..." class="card-img-top" alt="...">-->
     <div class="card-body">
     <h5 class="card-title">{{ post.title }}</h5>
-    <p class="card-text">{{ post.body }}</p>
+    <p class="card-text">{{ post.title_tag }}</p>
     <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
         {{ post.author.last_name }}<br/>
     </div>
