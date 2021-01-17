@@ -1,8 +1,170 @@
-{% extends 'base.html' %}
+	{% extends 'base.html' %}
 
 {% block content %}
 
+<style>
+		.carousel-inner img{
+			width: 100%;
+			height: 100%;
+		}
+		/*Firefox Bug Fix*/
+		.carousel-item {
+			transition: -webkit-transform 0.5s ease;
+			transition: transform 0.5s ease;
+			transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+			-webkit-backface-visibility: visible;
+			backface-visibility: visible;
+		}
+	</style>
 
+
+	<main>
+			<div class="carousel-large-screen">
+				<div id="" class="carousel slide" data-ride="carousel">
+					<!--Indicators Start-->
+					<ul class="carousel-indicators">
+						<li data-target="#demo" data-slide-to="0" class="active"></li>
+						<li data-target="#demo" data-slide-to="1"></li>
+						<li data-target="#demo" data-slide-to="2"></li>
+					</ul>
+					<!--Slideshow Start-->
+					<div class="carousel-inner">
+							<div class="carousel-item active">
+								<div class="row">
+									<div class="col-sm-9">
+										<div class="promo">
+											<img src="img/sky_carousel.jpg" alt="family" />
+											<div class="hilight">
+												<h6>Sky</h6>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3" style="background-color: rgb(235, 233, 233);
+									font-size: small;">
+										<h5>Sky</h5>
+										<p></p>
+										Em breve, vídeos com mais de oito minutos (em vez de 10) poderão exibir anúncios intermediários. Ativaremos esse recurso em vídeos existentes para aumentar o potencial de receita.
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="row">
+									<div class="col-sm-9">
+										<div class="promo">
+											<img src="img/winter_carousel.jpg" alt="winter" />
+											<div class="hilight">
+												<h6>Winter</h6>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3" style="background-color: rgb(235, 233, 233);
+									font-size: small;">
+										<h5>Winter</h5>
+										<p></p>
+										Em breve, vídeos com mais de oito minutos (em vez de 10) poderão exibir anúncios intermediários. Ativaremos esse recurso em vídeos existentes para aumentar o potencial de receita.
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="row">
+									<div class="col-sm-9">
+										<div class="promo">
+											<img src="img/ruth_carousel.jpg" alt="winter" />
+											<div class="hilight">
+												<h6>Ruth</h6>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3" style="background-color: rgb(235, 233, 233);
+									font-size: small;">
+										<h5>Ruth</h5>
+										<p></p>
+										Em breve, vídeos com mais de oito minutos (em vez de 10) poderão exibir anúncios intermediários. Ativaremos esse recurso em vídeos existentes para aumentar o potencial de receita.
+									</div>
+								</div>
+							</div>
+					</div>
+					<a class="carousel-control-prev" href="#demo" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a>
+					<a class="carousel-control-next" href="#demo" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+				</div>
+			</div>
+			<div class="carousel-small-screen">
+			<div id="demo" class="carousel slide" data-ride="carousel">
+				<!--Indicators Start-->
+				<ul class="carousel-indicators">
+					<li data-target="#demo" data-slide-to="0" class="active"></li>
+					<li data-target="#demo" data-slide-to="1"></li>
+					<li data-target="#demo" data-slide-to="2"></li>
+				</ul>
+				<!--Slideshow Start-->
+				<div class="carousel-inner">
+						<div class="carousel-item active">
+									<div class="promo">
+										<img src="img/sky_carousel.jpg" alt="family" />
+										<div class="hilight">
+											<h6>Sky</h6>
+										</div>
+									</div>
+						</div>
+						<div class="carousel-item">
+									<div class="promo">
+										<img src="img/winter_carousel.jpg" alt="winter" />
+										<div class="hilight">
+											<h6>Winter</h6>
+										</div>
+									</div>
+						</div>
+						<div class="carousel-item">
+									<div class="promo">
+										<img src="img/ruth_carousel.jpg" alt="winter" />
+										<div class="hilight">
+											<h6>Ruth</h6>
+										</div>
+									</div>
+						</div>
+				</div>
+				<a class="carousel-control-prev" href="#demo" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a class="carousel-control-next" href="#demo" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</a>
+			</div>
+			</div>
+
+			<p>
+				<h4>&nbsp Mais artigos</h4>
+			</p>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<div class="card-body"><img src="img/sunset.jpg" alt="sunset" style="width: 100%;
+									height: 100%; border-radius: 2%;"/></div>
+								<div class="card-footer">So perhaps, you've generated some fancy text, and you're content
+									that you can now copy and paste your fancy text in the comments section of funny cat videos</div>
+						  </div></div>
+						<div class="col-sm-4">
+							<div class="card">
+								<div class="card-body"><img src="img/family.JPG" alt="sunset" style="width: 100%;
+									height: 100%; border-radius: 2%;"/></div>
+								<div class="card-footer">So perhaps, you've generated some fancy text, and you're content
+									 that you can now copy and paste your fancy text in the comments section of funny cat videos</div>
+							  </div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<div class="card-body"><img src="img/ruth.jpg" alt="sunset" style="width: 100%;
+									height: 100%; border-radius: 2%;"/></div>
+								<div class="card-footer">So perhaps, you've generated some fancy text, and you're content
+									 that you can now copy and paste your fancy text in the comments section of funny cat videos</div>
+							  </div>
+						</div>
+					</div>
+	</main>
 <h1>Post</h1>
 
 <ul>
@@ -21,3 +183,29 @@
 </ul>
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
