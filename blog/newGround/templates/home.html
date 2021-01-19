@@ -145,12 +145,15 @@
 {% for post in object_list %}
     <div class="card" style="width: 18rem;">
 <!--    <img src="..." class="card-img-top" alt="...">-->
-    <div class="card-body">
-    <h5 class="card-title">{{ post.title }}</h5>
-    <p class="card-text">{{ post.title_tag }}</p>
-    <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
-        {{ post.author.last_name }}<br/>
-    </div>
+		<div class="card-body">
+			<h5 class="card-title">{{ post.title }}</h5>
+			<p class="card-text">{{ post.title_tag }}</p>
+			<a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
+				{{ post.author.last_name }}  &nbsp;  <small>
+					<a href="{% url 'update_post' post.pk %}">Edit</a>
+					<a href="{% url 'delete_post' post.pk %}">Delete</a>
+			</small><br/>
+		</div>
     </div>
     <br/>
 {% endfor %}

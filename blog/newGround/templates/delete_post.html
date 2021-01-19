@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}Create  new blog post{% endblock %}
+{% block title %}Delete blog post{% endblock %}
 {% block content %}
 
 
-<h4>Add Post</h4>
 <br/>
-
+<h3>Delete: {{ post.title }}</h3>
 <div class="container">
   <div class="row">
     <div class="col-sm">
@@ -14,7 +13,9 @@
                   <form method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button class="btn btn-secondary">Post</button>
+                        <br />
+                        <strong>Are you sure?</strong> &nbsp;
+                        <button class="btn btn-secondary">Delete</button>
                   </form>
             </div>
       </div>
