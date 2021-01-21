@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}Delete blog post{% endblock %}
+{% block title %}Register{% endblock %}
 {% block content %}
 
-{% if user.is_authenticated %}
+
+<h4>Register</h4>
 <br/>
-<h3>Delete: {{ post.title }}</h3>
+
 <div class="container">
   <div class="row">
     <div class="col-sm">
@@ -13,9 +14,7 @@
                   <form method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <br />
-                        <strong>Are you sure?</strong> &nbsp;
-                        <button class="btn btn-secondary">Delete</button>
+                        <button class="btn btn-secondary">Register</button>
                   </form>
             </div>
       </div>
@@ -24,8 +23,5 @@
     </div>
   </div>
 </div>
-{% else %}
-    You don't currently have permission to access this page.
-{% endif %}
 
 {% endblock %}

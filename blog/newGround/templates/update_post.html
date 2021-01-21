@@ -2,26 +2,28 @@
 {% block title %}Edit blog post{% endblock %}
 {% block content %}
 
+{% if user.is_authenticated %}
+    <h4>Update Post</h4>
+    <br/>
 
-<h4>Update Post</h4>
-<br/>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <div class="container-sm">
-            <div class="form-group">
-                  <form method="POST">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button class="btn btn-secondary">Update</button>
-                  </form>
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="container-sm">
+                <div class="form-group">
+                      <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn btn-secondary">Update</button>
+                      </form>
+                </div>
+          </div>
+        </div>
+        <div class="col-sm">
+        </div>
       </div>
     </div>
-    <div class="col-sm">
-    </div>
-  </div>
-</div>
-
+{% else %}
+    You don't currently have permission to access this page.
+{% endif %}
 {% endblock %}

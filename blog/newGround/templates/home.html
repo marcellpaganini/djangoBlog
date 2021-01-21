@@ -147,11 +147,13 @@
 <!--    <img src="..." class="card-img-top" alt="...">-->
 		<div class="card-body">
 			<h5 class="card-title">{{ post.title }}</h5>
-			<p class="card-text">{{ post.title_tag }}</p>
+			<p class="card-text">{{ post.body|slice:"150"|safe }}...</p>
 			<a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
 				{{ post.author.last_name }}  &nbsp;  <small>
+				{% if user.is_authenticated %}
 					<a href="{% url 'update_post' post.pk %}">Edit</a>
 					<a href="{% url 'delete_post' post.pk %}">Delete</a>
+				{% endif %}
 			</small><br/>
 		</div>
     </div>
