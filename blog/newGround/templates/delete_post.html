@@ -3,27 +3,31 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<br/>
-<h3>Delete: {{ post.title }}</h3>
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <div class="container-sm">
-            <div class="form-group">
-                  <form method="POST">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <br />
-                        <strong>Are you sure?</strong> &nbsp;
-                        <button class="btn btn-secondary">Delete</button>
-                  </form>
+        {% if user.id == post.author.id %}
+            <br/>
+            <h3>Delete: {{ post.title }}</h3>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <div class="container-sm">
+                        <div class="form-group">
+                              <form method="POST">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <br />
+                                    <strong>Are you sure?</strong> &nbsp;
+                                    <button class="btn btn-secondary">Delete</button>
+                              </form>
+                        </div>
+                  </div>
+                </div>
+                <div class="col-sm">
+                </div>
+              </div>
             </div>
-      </div>
-    </div>
-    <div class="col-sm">
-    </div>
-  </div>
-</div>
+        {% else %}
+            You don't currently have permission to access this page.
+        {% endif %}
 {% else %}
     You don't currently have permission to access this page.
 {% endif %}

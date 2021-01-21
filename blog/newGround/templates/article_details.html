@@ -9,10 +9,13 @@
     {{post.post_date}} -
 
 {% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
     <a href="{% url 'update_post' post.pk %}">Edit</a>
     <a href="{% url 'delete_post' post.pk %}">Delete</a>
+    {% endif %}
+
 {% else %}
-    You don't currently have permission to access this page.
+
 {% endif %}
 
 </small><br/>

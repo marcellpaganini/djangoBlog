@@ -3,6 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
     <h4>Update Post</h4>
     <br/>
 
@@ -23,6 +24,9 @@
         </div>
       </div>
     </div>
+    {% else %}
+        You don't currently have permission to access this page.
+    {% endif %}
 {% else %}
     You don't currently have permission to access this page.
 {% endif %}
