@@ -139,34 +139,30 @@
 
 <h1>Articles</h1>
 
-<ul>
-{% for post in object_list %}
-	{% counter%}
-	<div class="row">
-	  <div class="col-sm-6">.col-sm-3</div>
-	  <div class="col-sm-6">.col-sm-3</div>
-	</div>
-
-
-    <div class="card" style="width: 18rem;">
-<!--    <img src="..." class="card-img-top" alt="...">-->
-		<div class="card-body">
-			<h5 class="card-title">{{ post.title }}</h5>
-			<p class="card-text">{{ post.body|slice:"150"|safe }}...</p>
-			<a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
-				{{ post.author.last_name }}  &nbsp;  <small>
-				{% if user.is_authenticated %}
-					{% if user.id == post.author.id %}
-						<a href="{% url 'update_post' post.pk %}">Edit</a>
-						<a href="{% url 'delete_post' post.pk %}">Delete</a>
+<div class="container">
+  <div class="row">
+	  {% for post in object_list %}
+		<div class="col">
+		  <div class="card" style="width: 18rem;">
+			<!--    <img src="..." class="card-img-top" alt="...">-->
+			<div class="card-body">
+				<h5 class="card-title">{{ post.title }}</h5>
+				<p class="card-text">{{ post.body|slice:"150"|safe }}...</p>
+				<a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
+					{{ post.author.last_name }}  &nbsp;  <small>
+					{% if user.is_authenticated %}
+						{% if user.id == post.author.id %}
+							<a href="{% url 'update_post' post.pk %}">Edit</a>
+							<a href="{% url 'delete_post' post.pk %}">Delete</a>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-			</small><br/>
-		</div>
-    </div>
-    <br/>
-{% endfor %}
-</ul>
+				</small><br/>
+			</div>
+		  </div>
+        </div>
+	  {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
 
