@@ -137,32 +137,61 @@
 	</main>
 			<p>
 
-<h1>Articles</h1>
 
-<div class="container">
-  <div class="row">
-	  {% for post in object_list %}
-		<div class="col">
-		  <div class="card" style="width: 18rem;">
-			<!--    <img src="..." class="card-img-top" alt="...">-->
-			<div class="card-body">
-				<h5 class="card-title">{{ post.title }}</h5>
-				<p class="card-text">{{ post.body|slice:"150"|safe }}...</p>
-				<a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
-					{{ post.author.last_name }}  &nbsp;  <small>
-					{% if user.is_authenticated %}
-						{% if user.id == post.author.id %}
-							<a href="{% url 'update_post' post.pk %}">Edit</a>
-							<a href="{% url 'delete_post' post.pk %}">Delete</a>
-						{% endif %}
-					{% endif %}
-				</small><br/>
-			</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><h1>Articles</h1></th>
+	  <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+		  <div class="container">
+  			<div class="row">
+				<div class="col-md-4 mt-3 left">
+				  {% for post in object_list %}
+					  <div class="card" style="width: 18rem;">
+						<!--<img src="" class="card-img-top" alt="...">-->
+						<div class="card-body">
+							<h5 class="card-title">{{ post.title }}</h5>
+							<p class="card-text">{{ post.body|slice:"150"|safe }}...</p>
+							<a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
+								{{ post.author.last_name }}  &nbsp;  <small>
+								{% if user.is_authenticated %}
+									{% if user.id == post.author.id %}
+										<a href="{% url 'update_post' post.pk %}">Edit</a>
+										<a href="{% url 'delete_post' post.pk %}">Delete</a>
+									{% endif %}
+								{% endif %}
+							</small><br/>
+						</div>
+					  </div> <br />
+				  {% endfor %}
+				</div>
+  			</div>
 		  </div>
-        </div>
-	  {% endfor %}
-  </div>
-</div>
+	  </td>
+      <td>
+		  <div class="col-md-4 mt-3 left">
+		  <div class="card" style="width: 25rem;">
+			<!--<img src="" class="card-img-top" alt="...">-->
+			<div class="card-body">
+				<h5 class="card-title">About Us</h5>
+				<img src="{% static 'images/family.jpg' %}" width="100%">
+				<p class="card-text" align="justify"></br>Seja bem vindo! Nosso canal mostra nossa experiência desde nossa chegada ao Canadá.
+					Além disso, você encontrará dicas para quem estuda inglês e quer se aperfeiçoar no idioma.
+					Curiosidades, cultura, expressões e tendências apresentadas com referência a filmes, seriados,
+					músicas e jogos de forma inovadora e descontraída.</p>
+				<br/>
+			</div>
+		    </div>
+		  </div> <br />
+  	  </td>
+    </tr>
+  </tbody>
+</table>
 
 {% endblock %}
 
